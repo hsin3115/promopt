@@ -1,42 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Personal Branding</title>
-    <link href="css/tailwind.css" rel="stylesheet">
+    <title>HsinHan | Personal Website</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+            },
+            colors: {
+              primary: '#1E40AF',
+              darkgray: '#111827',
+              ivory: '#F9FAFB',
+            },
+          }
+        }
+      }
+    </script>
+  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  
+    <!-- Heroicons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100 font-sans">
-    <header class="bg-white shadow">
-        <div class="container mx-auto px-4 py-6">
-            <h1 class="text-3xl font-bold">Contact Me</h1>
+<body class="bg-ivory text-darkgray font-sans">
+
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-white bg-opacity-70 backdrop-blur-md shadow-md">
+  <div class="container mx-auto flex items-center justify-between py-4 px-6">
+    <a href="index.html" class="text-primary font-bold text-xl">HsinHan</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="about.html" class="hover:text-primary">About</a>
+      <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+      <a href="contact.html" class="hover:text-primary font-bold">Contact</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden">
+      <i data-feather="menu"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 hidden flex-col items-center justify-center space-y-8 text-white text-2xl">
+  <a href="index.html" class="hover:text-primary">Home</a>
+  <a href="about.html" class="hover:text-primary">About</a>
+  <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+  <a href="contact.html" class="hover:text-primary">Contact</a>
+</div>
+
+<!-- Contact Main Section -->
+<section class="pt-32 container mx-auto px-6 space-y-24">
+  
+  <!-- Contact Header -->
+  <div class="text-center space-y-6">
+    <h1 class="text-4xl font-bold">Contact Me</h1>
+    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+      If you have any questions or would like to work with me, feel free to send a message. I'd love to hear from you!
+    </p>
+  </div>
+
+  <!-- Contact Form -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+    <div class="space-y-6">
+      <form id="contact-form" class="space-y-6">
+        <div>
+          <label for="name" class="block text-sm font-medium text-darkgray">Name</label>
+          <input type="text" id="name" name="name" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary">
         </div>
-    </header>
-    <main class="container mx-auto px-4 py-10">
-        <section class="bg-white p-6 rounded-lg shadow-md">
-            <h2 class="text-2xl font-semibold mb-4">Get in Touch</h2>
-            <p class="mb-6">Feel free to reach out to me using the form below or via email at <a href="mailto:your-email@example.com" class="text-blue-500">your-email@example.com</a>.</p>
-            <form action="#" method="POST" class="space-y-4">
-                <div>
-                    <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
-                    <input type="text" id="name" name="name" required class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-500" placeholder="Your Name">
-                </div>
-                <div>
-                    <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
-                    <input type="email" id="email" name="email" required class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-500" placeholder="Your Email">
-                </div>
-                <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
-                    <textarea id="message" name="message" required class="mt-1 block w-full border border-gray-300 rounded-md p-2 focus:ring focus:ring-blue-500" rows="4" placeholder="Your Message"></textarea>
-                </div>
-                <button type="submit" class="w-full bg-blue-500 text-white font-semibold py-2 rounded-md hover:bg-blue-600">Send Message</button>
-            </form>
-        </section>
-    </main>
-    <footer class="bg-white shadow mt-10">
-        <div class="container mx-auto px-4 py-6 text-center">
-            <p class="text-gray-600">© 2023 Your Name. All rights reserved.</p>
+        <div>
+          <label for="email" class="block text-sm font-medium text-darkgray">Email</label>
+          <input type="email" id="email" name="email" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary">
         </div>
-    </footer>
+        <div>
+          <label for="subject" class="block text-sm font-medium text-darkgray">Subject</label>
+          <input type="text" id="subject" name="subject" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary">
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-darkgray">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary"></textarea>
+        </div>
+        <div class="flex justify-center">
+          <button type="submit" class="bg-primary text-white px-8 py-4 rounded-full transform transition hover:scale-105">Send Message</button>
+        </div>
+      </form>
+    </div>
+    <div class="bg-gray-100 rounded-lg shadow-lg">
+      <div class="p-6 space-y-4">
+        <h3 class="text-2xl font-bold">My Location</h3>
+        <div class="w-full h-72 bg-gray-300 rounded-lg"></div> <!-- Placeholder for map -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Toast -->
+  <div id="toast" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-green-500 text-white py-2 px-4 rounded-full shadow-md opacity-0 transition-opacity duration-300">
+    Thank you! I’ll get back soon.
+  </div>
+
+  <!-- Quick Links -->
+  <div class="text-center mt-12 space-x-8">
+    <a href="index.html" class="text-primary hover:text-primary text-lg">Back to Home</a>
+    <a href="about.html" class="text-primary hover:text-primary text-lg">About Me</a>
+    <a href="portfolio.html" class="text-primary hover:text-primary text-lg">My Portfolio</a>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="py-12 mt-24 text-center text-sm bg-darkgray text-ivory">
+  <div class="space-y-4">
+    <p>© 2025 Your Name</p>
+    <div class="flex justify-center space-x-4">
+      <a href="#" class="hover:text-primary"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" class="hidden fixed bottom-6 right-6 p-4 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition transform">
+  <i data-feather="arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="assets/js/scripts.js"></script>
+<script>feather.replace()</script>
+
 </body>
 </html>
+

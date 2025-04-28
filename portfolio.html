@@ -1,57 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-Hant" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Visual Designer</title>
-    <link href="css/tailwind.css" rel="stylesheet">
+    <title>HsinHan | Personal Website</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+            },
+            colors: {
+              primary: '#1E40AF',
+              darkgray: '#111827',
+              ivory: '#F9FAFB',
+            },
+          }
+        }
+      }
+    </script>
+  
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+  
+    <!-- Heroicons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+  
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow">
-        <nav class="container mx-auto p-4 flex justify-between items-center">
-            <a href="index.html" class="text-xl font-bold">My Portfolio</a>
-            <ul class="flex space-x-4">
-                <li><a href="index.html" class="text-gray-700 hover:text-blue-500">Home</a></li>
-                <li><a href="about.html" class="text-gray-700 hover:text-blue-500">About</a></li>
-                <li><a href="portfolio.html" class="text-blue-500">Portfolio</a></li>
-                <li><a href="contact.html" class="text-gray-700 hover:text-blue-500">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<body class="bg-ivory text-darkgray font-sans">
 
-    <main class="container mx-auto p-6">
-        <h1 class="text-3xl font-bold text-center mb-8">My Work</h1>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="path/to/project1.jpg" alt="Project 1" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="font-semibold text-lg">Project Title 1</h2>
-                    <p class="text-gray-600">Brief description of the project goes here.</p>
-                    <a href="https://link-to-project1.com" class="text-blue-500 hover:underline">View Project</a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="path/to/project2.jpg" alt="Project 2" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="font-semibold text-lg">Project Title 2</h2>
-                    <p class="text-gray-600">Brief description of the project goes here.</p>
-                    <a href="https://link-to-project2.com" class="text-blue-500 hover:underline">View Project</a>
-                </div>
-            </div>
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                <img src="path/to/project3.jpg" alt="Project 3" class="w-full h-48 object-cover">
-                <div class="p-4">
-                    <h2 class="font-semibold text-lg">Project Title 3</h2>
-                    <p class="text-gray-600">Brief description of the project goes here.</p>
-                    <a href="https://link-to-project3.com" class="text-blue-500 hover:underline">View Project</a>
-                </div>
-            </div>
-            <!-- Add more project cards as needed -->
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-white bg-opacity-70 backdrop-blur-md shadow-md">
+  <div class="container mx-auto flex items-center justify-between py-4 px-6">
+    <a href="index.html" class="text-primary font-bold text-xl">HsinHan</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="about.html" class="hover:text-primary">About</a>
+      <a href="portfolio.html" class="hover:text-primary font-bold">Portfolio</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden">
+      <i data-feather="menu"></i>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 hidden flex-col items-center justify-center space-y-8 text-white text-2xl">
+  <a href="index.html" class="hover:text-primary">Home</a>
+  <a href="about.html" class="hover:text-primary">About</a>
+  <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+  <a href="contact.html" class="hover:text-primary">Contact</a>
+</div>
+
+<!-- Portfolio Main -->
+<section class="pt-32 container mx-auto px-6 space-y-24">
+  
+  <!-- Portfolio Header -->
+  <div class="text-center space-y-6">
+    <h1 class="text-4xl font-bold">My Portfolio</h1>
+    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
+      Here are some of the projects I've worked on. From web design to full-stack development, each project reflects my passion for creating intuitive and engaging experiences.
+    </p>
+  </div>
+
+  <!-- Filter Bar -->
+  <div class="flex justify-center mb-12 space-x-8">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="web">Web Design</button>
+    <button class="filter-btn" data-filter="app">App Design</button>
+    <button class="filter-btn" data-filter="branding">Branding</button>
+  </div>
+
+  <!-- Portfolio Grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="portfolio-item web">
+      <div class="bg-gray-200 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl">
+        <img src="https://picsum.photos/300" alt="Project 1" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Project 1</h3>
+          <p class="text-sm text-gray-600">Website design and development</p>
+          <a href="#" class="mt-4 text-primary hover:underline">View Details</a>
         </div>
-    </main>
+      </div>
+    </div>
 
-    <footer class="bg-white text-center p-4 mt-8">
-        <p class="text-gray-600">© 2023 Your Name. All rights reserved.</p>
-    </footer>
+    <div class="portfolio-item app">
+      <div class="bg-gray-200 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl">
+        <img src="https://picsum.photos/300" alt="Project 2" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Project 2</h3>
+          <p class="text-sm text-gray-600">Mobile app design</p>
+          <a href="#" class="mt-4 text-primary hover:underline">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-item branding">
+      <div class="bg-gray-200 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl">
+        <img src="https://picsum.photos/300" alt="Project 3" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Project 3</h3>
+          <p class="text-sm text-gray-600">Branding and logo design</p>
+          <a href="#" class="mt-4 text-primary hover:underline">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="portfolio-item web">
+      <div class="bg-gray-200 rounded-lg overflow-hidden shadow-lg transform transition hover:scale-105 hover:shadow-2xl">
+        <img src="https://picsum.photos/300" alt="Project 4" class="w-full h-48 object-cover">
+        <div class="p-6">
+          <h3 class="text-xl font-bold">Project 4</h3>
+          <p class="text-sm text-gray-600">E-commerce website</p>
+          <a href="#" class="mt-4 text-primary hover:underline">View Details</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- More projects will load here -->
+  </div>
+
+  <!-- Load More Button -->
+  <div class="text-center">
+    <button class="bg-primary text-white px-8 py-4 rounded-full transform transition hover:scale-105">Load More</button>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="py-12 mt-24 text-center text-sm bg-darkgray text-ivory">
+  <div class="space-y-4">
+    <p>© 2025 Your Name</p>
+    <div class="flex justify-center space-x-4">
+      <a href="#" class="hover:text-primary"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" class="hidden fixed bottom-6 right-6 p-4 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition transform">
+  <i data-feather="arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="assets/js/scripts.js"></script>
+<script>feather.replace()</script>
+
 </body>
 </html>

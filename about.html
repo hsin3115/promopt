@@ -1,55 +1,155 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Personal Branding</title>
-    <link href="css/tailwind.css" rel="stylesheet">
-</head>
-<body class="bg-gray-100 text-gray-800">
-    <header class="bg-white shadow">
-        <nav class="container mx-auto p-4">
-            <ul class="flex space-x-4">
-                <li><a href="index.html" class="text-blue-500 hover:underline">Home</a></li>
-                <li><a href="about.html" class="text-blue-500 hover:underline">About</a></li>
-                <li><a href="portfolio.html" class="text-blue-500 hover:underline">Portfolio</a></li>
-                <li><a href="contact.html" class="text-blue-500 hover:underline">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+<html lang="zh-Hant">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> HsinHan | Personal Website</title>
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+        
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          tailwind.config = {
+            theme: {
+              extend: {
+                fontFamily: {
+                  sans: ['Inter', 'Noto Sans TC', 'sans-serif'],
+                },
+                colors: {
+                  primary: '#1E40AF',
+                  darkgray: '#111827',
+                  ivory: '#F9FAFB',
+                },
+              }
+            }
+          }
+        </script>
+      
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+      
+        <!-- Heroicons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+      
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="styles.css">
+      </head>
+      
+<body class="bg-ivory text-darkgray font-sans">
 
-    <main class="container mx-auto p-8">
-        <section class="mb-8">
-            <h1 class="text-4xl font-bold mb-4">About Me</h1>
-            <p class="mb-4">Hello! I'm a top visual designer with a passion for creating stunning and user-friendly designs. With years of experience in the industry, I specialize in crafting visual experiences that resonate with audiences.</p>
-        </section>
+<!-- Header -->
+<header class="fixed top-0 w-full z-50 bg-white bg-opacity-70 backdrop-blur-md shadow-md">
+  <div class="container mx-auto flex items-center justify-between py-4 px-6">
+    <a href="index.html" class="text-primary font-bold text-xl">HsinHan</a>
+    <nav class="hidden md:flex space-x-6">
+      <a href="index.html" class="hover:text-primary">Home</a>
+      <a href="about.html" class="hover:text-primary font-bold">About</a>
+      <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+      <a href="contact.html" class="hover:text-primary">Contact</a>
+    </nav>
+    <button id="menu-toggle" class="md:hidden">
+      <i data-feather="menu"></i>
+    </button>
+  </div>
+</header>
 
-        <section class="mb-8">
-            <h2 class="text-2xl font-semibold mb-2">Skills</h2>
-            <ul class="list-disc list-inside mb-4">
-                <li>UI/UX Design</li>
-                <li>Graphic Design</li>
-                <li>Branding</li>
-                <li>Web Design</li>
-                <li>Prototyping</li>
-                <li>Illustration</li>
-            </ul>
-        </section>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-50 hidden flex-col items-center justify-center space-y-8 text-white text-2xl">
+  <a href="index.html" class="hover:text-primary">Home</a>
+  <a href="about.html" class="hover:text-primary">About</a>
+  <a href="portfolio.html" class="hover:text-primary">Portfolio</a>
+  <a href="contact.html" class="hover:text-primary">Contact</a>
+</div>
 
-        <section>
-            <h2 class="text-2xl font-semibold mb-2">Connect with Me</h2>
-            <ul class="space-y-2">
-                <li><a href="https://www.linkedin.com/in/yourprofile" class="text-blue-500 hover:underline">LinkedIn</a></li>
-                <li><a href="https://www.twitter.com/yourprofile" class="text-blue-500 hover:underline">Twitter</a></li>
-                <li><a href="https://www.instagram.com/yourprofile" class="text-blue-500 hover:underline">Instagram</a></li>
-            </ul>
-        </section>
-    </main>
+<!-- About Main -->
+<section class="pt-32 container mx-auto px-6 space-y-24">
+  
+  <!-- Profile Section -->
+  <div class="flex flex-col md:flex-row items-center md:items-start space-y-12 md:space-y-0 md:space-x-12">
+    <img src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/4b3d02215629877.677016d9c017e.png" alt="Profile" class="w-72 h-72 object-cover rounded-2xl shadow-lg">
+    <div class="space-y-6">
+      <h1 class="text-4xl font-bold">Hello, I'm HsinHan</h1>
+      <p class="text-lg leading-relaxed">
+        I'm a passionate designer and developer based in [City]. I specialize in creating beautiful, user-friendly websites and applications. 
+        With [X] years of experience, I love turning ideas into digital reality.
+      </p>
+      <p class="text-lg leading-relaxed">
+        I believe in clean code, thoughtful design, and collaboration to bring out the best in every project.
+      </p>
+      <a href="contact.html" class="inline-block mt-6 px-8 py-4 bg-primary text-white rounded-full button-ripple hover:scale-105 transition transform">Hire Me</a>
+    </div>
+  </div>
 
-    <footer class="bg-white shadow mt-8">
-        <div class="container mx-auto p-4 text-center">
-            <p>&copy; 2023 Your Name. All rights reserved.</p>
-        </div>
-    </footer>
+  <!-- Timeline Section -->
+  <div class="space-y-12">
+    <h2 class="text-3xl font-bold text-center">My Journey</h2>
+    <div class="relative border-l-4 border-primary ml-6 space-y-12">
+      
+      <div class="pl-6 relative">
+        <div class="absolute top-0 left-[-1.25rem] w-5 h-5 bg-primary rounded-full"></div>
+        <h3 class="text-xl font-bold">2020 - Started Freelancing</h3>
+        <p class="text-gray-600">Worked with startups and agencies to deliver high-quality designs and websites.</p>
+      </div>
+
+      <div class="pl-6 relative">
+        <div class="absolute top-0 left-[-1.25rem] w-5 h-5 bg-primary rounded-full"></div>
+        <h3 class="text-xl font-bold">2022 - Joined ABC Company</h3>
+        <p class="text-gray-600">Contributed to UI/UX design, front-end development, and branding projects.</p>
+      </div>
+
+      <div class="pl-6 relative">
+        <div class="absolute top-0 left-[-1.25rem] w-5 h-5 bg-primary rounded-full"></div>
+        <h3 class="text-xl font-bold">Now - Growing and Learning</h3>
+        <p class="text-gray-600">Continuously evolving my skills in design, development, and leadership.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Fun Facts -->
+  <div class="space-y-12">
+    <h2 class="text-3xl font-bold text-center">Fun Facts</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+      <div class="p-8 bg-white rounded-xl shadow-lg">
+        <h3 class="text-4xl font-bold text-primary">50+</h3>
+        <p class="mt-4">Projects Completed</p>
+      </div>
+      <div class="p-8 bg-white rounded-xl shadow-lg">
+        <h3 class="text-4xl font-bold text-primary">5+</h3>
+        <p class="mt-4">Years Experience</p>
+      </div>
+      <div class="p-8 bg-white rounded-xl shadow-lg">
+        <h3 class="text-4xl font-bold text-primary">10+</h3>
+        <p class="mt-4">Countries Clients</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- Footer -->
+<footer class="py-12 mt-24 text-center text-sm bg-darkgray text-ivory">
+  <div class="space-y-4">
+    <p>© 2025 Your Name</p>
+    <div class="flex justify-center space-x-4">
+      <a href="#" class="hover:text-primary"><i class="fab fa-facebook"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-linkedin"></i></a>
+      <a href="#" class="hover:text-primary"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to Top -->
+<button id="back-to-top" class="hidden fixed bottom-6 right-6 p-4 rounded-full bg-primary text-white shadow-lg hover:scale-110 transition transform">
+  <i data-feather="arrow-up"></i>
+</button>
+
+<!-- Scripts -->
+<script src="assets/js/scripts.js"></script>
+<script>feather.replace()</script>
+
 </body>
 </html>
