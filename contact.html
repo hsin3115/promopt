@@ -36,12 +36,17 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <!-- 共用 Head 區塊 -->
+</head>
 <body class="bg-ivory text-darkgray font-sans">
 
 <!-- Header -->
 <header class="fixed top-0 w-full z-50 bg-white bg-opacity-70 backdrop-blur-md shadow-md">
   <div class="container mx-auto flex items-center justify-between py-4 px-6">
-    <a href="index.html" class="text-primary font-bold text-xl">HsinHan</a>
+    <a href="index.html" class="text-primary font-bold text-xl">Your Name</a>
     <nav class="hidden md:flex space-x-6">
       <a href="index.html" class="hover:text-primary">Home</a>
       <a href="about.html" class="hover:text-primary">About</a>
@@ -62,62 +67,29 @@
   <a href="contact.html" class="hover:text-primary">Contact</a>
 </div>
 
-<!-- Contact Main Section -->
-<section class="pt-32 container mx-auto px-6 space-y-24">
-  
-  <!-- Contact Header -->
-  <div class="text-center space-y-6">
-    <h1 class="text-4xl font-bold">Contact Me</h1>
-    <p class="text-lg leading-relaxed max-w-3xl mx-auto">
-      If you have any questions or would like to work with me, feel free to send a message. I'd love to hear from you!
-    </p>
-  </div>
+<!-- Main Content -->
+<section class="pt-32 container mx-auto px-6 max-w-3xl">
+  <h2 class="text-3xl font-bold text-center mb-12">聯絡我</h2>
 
-  <!-- Contact Form -->
-  <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-    <div class="space-y-6">
-      <form id="contact-form" class="space-y-6">
-        <div>
-          <label for="name" class="block text-sm font-medium text-darkgray">Name</label>
-          <input type="text" id="name" name="name" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary">
-        </div>
-        <div>
-          <label for="email" class="block text-sm font-medium text-darkgray">Email</label>
-          <input type="email" id="email" name="email" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary">
-        </div>
-        <div>
-          <label for="subject" class="block text-sm font-medium text-darkgray">Subject</label>
-          <input type="text" id="subject" name="subject" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary">
-        </div>
-        <div>
-          <label for="message" class="block text-sm font-medium text-darkgray">Message</label>
-          <textarea id="message" name="message" rows="4" required class="w-full mt-2 px-4 py-3 border rounded-lg shadow-md focus:ring-2 focus:ring-primary"></textarea>
-        </div>
-        <div class="flex justify-center">
-          <button type="submit" class="bg-primary text-white px-8 py-4 rounded-full transform transition hover:scale-105">Send Message</button>
-        </div>
-      </form>
+  <form class="space-y-6">
+    <div>
+      <label for="name" class="block text-lg font-medium mb-2">姓名</label>
+      <input type="text" id="name" name="name" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
     </div>
-    <div class="bg-gray-100 rounded-lg shadow-lg">
-      <div class="p-6 space-y-4">
-        <h3 class="text-2xl font-bold">My Location</h3>
-        <div class="w-full h-72 bg-gray-300 rounded-lg"></div> <!-- Placeholder for map -->
-      </div>
+    <div>
+      <label for="email" class="block text-lg font-medium mb-2">Email</label>
+      <input type="email" id="email" name="email" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary">
     </div>
-  </div>
+    <div>
+      <label for="message" class="block text-lg font-medium mb-2">訊息</label>
+      <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"></textarea>
+    </div>
+    <button type="submit" class="bg-primary text-white px-6 py-3 rounded-full hover:scale-105 transition transform">送出</button>
+  </form>
 
-  <!-- Success Toast -->
-  <div id="toast" class="fixed top-0 left-1/2 transform -translate-x-1/2 bg-green-500 text-white py-2 px-4 rounded-full shadow-md opacity-0 transition-opacity duration-300">
-    Thank you! I’ll get back soon.
+  <div class="mt-12 text-center text-gray-600">
+    <p>或直接寄信給我：<a href="mailto:your@email.com" class="text-primary underline">your@email.com</a></p>
   </div>
-
-  <!-- Quick Links -->
-  <div class="text-center mt-12 space-x-8">
-    <a href="index.html" class="text-primary hover:text-primary text-lg">Back to Home</a>
-    <a href="about.html" class="text-primary hover:text-primary text-lg">About Me</a>
-    <a href="portfolio.html" class="text-primary hover:text-primary text-lg">My Portfolio</a>
-  </div>
-
 </section>
 
 <!-- Footer -->
@@ -140,7 +112,9 @@
 
 <!-- Scripts -->
 <script src="assets/js/scripts.js"></script>
-<script>feather.replace()</script>
+<script>
+  feather.replace();
+</script>
 
 </body>
 </html>
